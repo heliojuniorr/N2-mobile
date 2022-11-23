@@ -1,4 +1,5 @@
 import { Text, TouchableOpacity, View } from "react-native";
+import { OptionsButton } from "../../components/OptionsButton";
 import {styles} from './styles';
 
 //@ts-ignore
@@ -12,13 +13,8 @@ export function Home({navigation}) {
         <View style={styles.homeContainer}>
             <Text style={styles.title}>Bloco de notas do Dudu</Text>
             <View style={styles.buttonsContainer}>
-                <TouchableOpacity style={styles.button} onPress={() => handleNavigation('NewNote')}>
-                    <Text style={styles.buttonText}>Adicionar anotação</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.button} onPress={() => handleNavigation('Notes')}>
-                    <Text style={styles.buttonText}>Ver anotações</Text>
-                </TouchableOpacity>
+                <OptionsButton onClick={() => handleNavigation('NewNote')} text={'Adicionar anotação'}/>
+                <OptionsButton onClick={() => handleNavigation('Notes')} text={'Ver anotações'}/>
             </View>
         </View>
     )
